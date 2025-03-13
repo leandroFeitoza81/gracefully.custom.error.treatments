@@ -1,4 +1,5 @@
-﻿using CodeMasterDev.Core.Models;
+﻿using CodeMasterDev.Core.Interfaces.Repositories;
+using CodeMasterDev.Core.Models;
 using Microsoft.AspNetCore.Mvc;
 
 namespace CodeMasterDev.Api.Controllers;
@@ -7,16 +8,26 @@ namespace CodeMasterDev.Api.Controllers;
 [Route("api/[controller]")]
 public class ActorController : ControllerBase
 {
-    [HttpGet]
-    public ActionResult<Actor> GetAll()
+    private readonly IActorRepository _repository;
+
+    public ActorController(IActorRepository actorRepository)
     {
-        var actor = new Actor()
+        _repository = actorRepository;
+    }
+
+    [HttpGet]
+    public async Task<ActionResult<Actor>> GetAll()
+    {
+        try
         {
-            Id = 1,
-            Name = "Tom Cruise",
-            Birthdate = new DateTime(1962, 7, 3)
-        };
-        
-        return Ok(actor);
+            var actor = await _repository.GetAllActors();
+
+            return Ok(actor);
+        }
+        catch (Exception e)
+        {
+           return StatusCode(500, e.Message);
+        }
+
     }
 }
