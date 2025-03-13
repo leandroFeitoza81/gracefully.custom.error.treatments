@@ -5,7 +5,9 @@ VisualStudioVersion = 17.0.31903.59
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "src", "src", "{631AAEEF-09D2-4489-8883-CA37C2BC75E1}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CodeMasterDev.Api", "src\CodeMasterDev.Api\CodeMasterDev.Api.csproj", "{BE4809F6-CE82-42F6-9B3B-EF952A1CA187}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CodeMasterDev.Api", "CodeMasterDev.Api\CodeMasterDev.Api.csproj", "{BE4809F6-CE82-42F6-9B3B-EF952A1CA187}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CodeMasterDev.Core", "CodeMasterDev.Core\CodeMasterDev.Core.csproj", "{5713D199-1E3B-4CB8-B343-B60E6A195FAB}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -17,11 +19,16 @@ Global
 	EndGlobalSection
 	GlobalSection(NestedProjects) = preSolution
 		{BE4809F6-CE82-42F6-9B3B-EF952A1CA187} = {631AAEEF-09D2-4489-8883-CA37C2BC75E1}
+		{5713D199-1E3B-4CB8-B343-B60E6A195FAB} = {631AAEEF-09D2-4489-8883-CA37C2BC75E1}
 	EndGlobalSection
 	GlobalSection(ProjectConfigurationPlatforms) = postSolution
 		{BE4809F6-CE82-42F6-9B3B-EF952A1CA187}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
 		{BE4809F6-CE82-42F6-9B3B-EF952A1CA187}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{BE4809F6-CE82-42F6-9B3B-EF952A1CA187}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{BE4809F6-CE82-42F6-9B3B-EF952A1CA187}.Release|Any CPU.Build.0 = Release|Any CPU
+		{5713D199-1E3B-4CB8-B343-B60E6A195FAB}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{5713D199-1E3B-4CB8-B343-B60E6A195FAB}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{5713D199-1E3B-4CB8-B343-B60E6A195FAB}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{5713D199-1E3B-4CB8-B343-B60E6A195FAB}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 EndGlobal
