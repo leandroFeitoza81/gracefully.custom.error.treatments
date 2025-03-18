@@ -1,6 +1,7 @@
 ﻿using CodeMasterDev.Core.DataBase;
 using CodeMasterDev.Core.Interfaces.Repositories;
 using CodeMasterDev.Core.Models;
+using CodeMasterDev.Core.Repositories.Scripts;
 using Dapper;
 
 namespace CodeMasterDev.Core.Repositories
@@ -16,10 +17,16 @@ namespace CodeMasterDev.Core.Repositories
 
         public async Task<IEnumerable<Actor>> GetAllActors()
         {
-            const string query = "SELECT * FROM Db_Movies..Actor";
             using var connection = _context.CreateConnection();
-            var actors = await connection.QueryAsync<Actor>(query);
+            var actors = await connection.QueryAsync<Actor>(ActorScripts.QuerySelectActor);
             return actors;
+        }
+
+        public async Task<bool> CreateActor(Actor actor)
+        {
+            using var connection = _context.CreateConnection();
+            var newActor = await connection.ExecuteAsync(ActorScripts.QueryInsertActor, actor);
+            return newActor > 0;
         }
     }
 }

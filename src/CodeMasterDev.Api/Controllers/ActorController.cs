@@ -30,4 +30,18 @@ public class ActorController : ControllerBase
         }
 
     }
+
+    [HttpPost]
+    public async Task<ActionResult<Actor>> Create([FromBody] Actor actor)
+    {
+        try
+        {
+            var newActor = await _repository.CreateActor(actor);
+            return Ok(newActor);
+        }
+        catch (Exception e)
+        {
+            return StatusCode(500, e.Message);
+        }
+    }
 }
