@@ -1,10 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-
-namespace CodeMasterDev.Core.Models
+﻿namespace CodeMasterDev.Core.Domain.Models
 {
     public class ObjectResponse
     {

@@ -1,4 +1,4 @@
-﻿namespace CodeMasterDev.Core.Models;
+﻿namespace CodeMasterDev.Core.Domain.Models;
 
 public class Movie
 {

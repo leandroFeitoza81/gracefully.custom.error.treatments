@@ -1,6 +1,6 @@
-﻿using System.Net;
-using CodeMasterDev.Core.Models;
+﻿using CodeMasterDev.Core.Domain.Models;
 using Microsoft.AspNetCore.Mvc;
+using System.Net;
 
 namespace CodeMasterDev.Api.Controllers
 {
@@ -13,19 +13,19 @@ namespace CodeMasterDev.Api.Controllers
             object? data = null
             )
         {
-            var objeto = new ObjectResponse()
+            var objectResponse = new ObjectResponse()
             {
                 Success = success,
                 Message = message,
                 Data = data
             };
 
-            return new ObjectResult(objeto) { StatusCode = (int)statusCode };
+            return new ObjectResult(objectResponse) { StatusCode = (int)statusCode };
         }
 
-        public static ActionResult ResponseOk(object data)
+        public static ActionResult ResponseOk(string? message, object? data = null)
         {
-            return CustomResponse(HttpStatusCode.OK, true, null, data);
+            return CustomResponse(HttpStatusCode.OK, true, message, data);
         }
 
         public static ActionResult ResponseServerError(Exception ex)
@@ -36,6 +36,11 @@ namespace CodeMasterDev.Api.Controllers
         public static ActionResult ResponseBadRequest(string message)
         {
             return CustomResponse(HttpStatusCode.BadRequest, false, message);
+        }
+
+        public static ActionResult ResponseNotFound(string message)
+        {
+            return CustomResponse(HttpStatusCode.NotFound, false, message);
         }
     }
 }

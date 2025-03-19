@@ -1,7 +1,7 @@
 ﻿using System.Data;
 using Microsoft.Data.SqlClient;
 
-namespace CodeMasterDev.Core.DataBase;
+namespace CodeMasterDev.Core.Infra.DataBase;
 
 public class DapperContext
 {
