@@ -12,7 +12,7 @@ public class Program
     public static void Main(string[] args)
     {
         var builder = WebApplication.CreateBuilder(args);
-        // desabilita validaÁ„o autom·tica do ModelState
+        // desabilita valida√ß√£o autom√°tica do ModelState
         builder.Services.Configure<ApiBehaviorOptions>(options => options.SuppressModelStateInvalidFilter = true);
 
         builder.Services.AddControllers();

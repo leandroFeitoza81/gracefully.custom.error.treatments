@@ -58,7 +58,9 @@ public class ActorController : ControllerSuper
 
             var newActor = await _service.Insert(actor);
 
-            return newActor ? ResponseOk("Ator criado com sucesso.") : ResponseBadRequest("Houve um erro ao criar um ator");
+            return newActor
+                ? ResponseOk("Ator criado com sucesso.")
+                : ResponseBadRequest("Houve um erro ao criar um ator");
         }
         catch (Exception e)
         {
@@ -80,7 +82,9 @@ public class ActorController : ControllerSuper
                 return ResponseNotFound("Ator não encontrado.");
 
             var newActor = await _repository.Update(actor);
-            return newActor ? ResponseOk("Ator atualizado com sucesso.", newActor) : ResponseBadRequest("Houve um erro ao atualizar um ator");
+            return newActor
+                ? ResponseOk("Ator atualizado com sucesso.", newActor)
+                : ResponseBadRequest("Houve um erro ao atualizar um ator");
         }
         catch (Exception e)
         {
@@ -97,7 +101,9 @@ public class ActorController : ControllerSuper
             if (actor == null)
                 return ResponseNotFound("Ator não encontrado.");
             var result = await _repository.Delete(id);
-            return result ? ResponseOk("Ator deletado com sucesso.") : ResponseBadRequest("Houve um erro ao deletar um ator");
+            return result
+                ? ResponseOk("Ator deletado com sucesso.")
+                : ResponseBadRequest("Houve um erro ao deletar um ator");
         }
         catch (Exception e)
         {
